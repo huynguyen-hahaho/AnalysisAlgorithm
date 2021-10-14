@@ -3,26 +3,28 @@
 
 using namespace std;
 
-int a[10],n;
+int a[10],n,k;
+
 
 void init ()
 {
     cin >> n; //nhap n;
+    cin >> k; //nhap k;
 }
 
 void output()
 {
-    for(int i=0;i<n;i++)
+    for(int i=1;i<=k;i++)
         cout << a[i];
     cout << endl;
 }
 
 void Try(int i)
 {
-    for(int v=0;v<=1;v++)
+    for(int v=a[i-1]+1;v<=n-k+i;v++)
     {
-        a[i]=v;
-        if(i==n-1)   //
+       a[i]=v;
+        if(i==k)   //
             output();
         else
             Try(i+1); //
@@ -32,5 +34,6 @@ void Try(int i)
 int main()
 {
     init();  //
-    Try(0);
+    a[0]=0;
+    Try(1);
 }
