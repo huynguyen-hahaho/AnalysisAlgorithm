@@ -56,10 +56,12 @@ void Try(int i)
     for(int v=0;v<=1;v++)
     {
         a[i]=v;
-        if(i==n-1&&SumW()<=W&&SumV()>maxV){
+        if(i==n-1){
+            if(SumW()<=W&&SumV()>maxV){
             CopyArray(result);
             maxV=SumV();
            //continue
+            }
         }
 
         else
@@ -70,7 +72,7 @@ void PrintResult(){
 
    for(int i=0;i<n;i++)
      if(a[i]==1)
-    cout<<"Do vat"<<i;
+    cout<<"Do vat"<<i<<"\n";
    cout<<"Gia tri cac do vat dc chon"<<maxV;
 }
 int main()
