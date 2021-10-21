@@ -3,12 +3,16 @@
 
 using namespace std;
 
-int a[10],n, W;
+int a[10],n, W,maxV;
 int v[10],w[10];
 int result[10];
 void init ()
 {
+    maxV=0;
+    cout<<"Nhap so luong do vat:";
     cin >> n; //nhap n;
+    cout<<"Nhap trong luong toi da:";
+    cin>>W;
 }
 
 void output()
@@ -19,31 +23,32 @@ void output()
 }
 void input(){
      for(int i=0;i<n;i++){
-         cout <<"v["<<i<<"]=<<";
+         cout <<"v["<<i<<"]=";
          cin>>v[i];
-         cout <<"w["<<i<<"]=<<";
-          cout << endl;
+         cout <<"w["<<i<<"]=";
+         cin>>w[i];
+         cout << endl;
 
      }
 
 }
-int SumV(int a[10]){
+int SumV(){
     int s=0;
      for(int i=0;i<n;i++)
        if(a[i]==1)
          s+=v[i];
     return s;
 }
-int SumW(int a[10]){
+int SumW(){
     int s=0;
      for(int i=0;i<n;i++)
         if(a[i]==1)
          s+=w[i];
     return s;
 }
-void CopyArray(int a[],int b[]){
+void CopyArray(int b[]){
     for(int i=0;i<n;i++)
-        a[i]=b[i];
+        b[i]=a[i];
 
 }
 void Try(int i)
@@ -51,17 +56,27 @@ void Try(int i)
     for(int v=0;v<=1;v++)
     {
         a[i]=v;
-        if(i==n-1){
-
+        if(i==n-1&&SumW()<=W&&SumV()>maxV){
+            CopyArray(result);
+            maxV=SumV();
+           //continue
         }
 
         else
             Try(i+1); //
     }
 }
+void PrintResult(){
 
+   for(int i=0;i<n;i++)
+     if(a[i]==1)
+    cout<<"Do vat"<<i;
+   cout<<"Gia tri cac do vat dc chon"<<maxV;
+}
 int main()
 {
     init();  //
+    input();
     Try(0);
+    PrintResult();
 }
