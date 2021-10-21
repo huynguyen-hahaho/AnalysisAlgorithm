@@ -71,8 +71,8 @@ void Try(int i)
 void PrintResult(){
 
    for(int i=0;i<n;i++)
-     if(a[i]==1)
-    cout<<"Do vat"<<i<<"\n";
+     if(result[i]==1)
+    cout<<"Do vat:"<<i<<"\n";
    cout<<"Gia tri cac do vat dc chon"<<maxV;
 }
 int main()
