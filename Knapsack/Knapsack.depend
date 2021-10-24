@@ -1,4 +1,8 @@
 # depslib dependency file v1.0
+<<<<<<< HEAD
 1634818955 source:/Users/appletinphat/Documents/GitHub/AnalysisAlgorithm/Knapsack/main.cpp
+=======
+1634819678 source:e:\tailieugiangday\analysis algorithm\analysisalgorithm\knapsack\main.cpp
+>>>>>>> 8a59dc8715140a0dc4125f512eedd71d3c162401
 	<iostream>
 
