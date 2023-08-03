@@ -53,9 +53,13 @@ void CopyArray(int b[]){
 }
 void Try(int i)
 {
+    int sw=0;
     for(int v=0;v<=1;v++)
     {
         a[i]=v;
+        for(int k=0;k<=i;k++)
+              sw+=w[k];
+        if(sw<W)
         if(i==n-1){
             if(SumW()<=W&&SumV()>maxV){
             CopyArray(result);
@@ -67,6 +71,9 @@ void Try(int i)
         else
             Try(i+1); //
     }
+}
+void GreadyAlgorithm(){
+
 }
 void PrintResult(){
 
