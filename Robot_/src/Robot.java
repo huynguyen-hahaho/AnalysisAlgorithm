@@ -8,6 +8,7 @@ public class Robot {
             int path[];
             public Robot() {
             	
+            	
             }
             public boolean Go(int step) {
             	switch(step) {
