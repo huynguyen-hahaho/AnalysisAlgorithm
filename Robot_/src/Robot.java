@@ -10,6 +10,7 @@ public class Robot {
             	
             	
             }
+            
             public boolean Go(int step) {
             	switch(step) {
             	  case 0: x-=1; break;
